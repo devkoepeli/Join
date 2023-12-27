@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="./css/inter.css" />
+    <link rel="stylesheet" href="./css/open_sans.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/board.css" />
+    <link rel="stylesheet" href="./css/board_responsive.css" />
+
+    <link rel="stylesheet" href="./css/task.css" />
+    <link rel="stylesheet" href="css/task_responsive.css" />
+    <link rel="stylesheet" href="css/contacts-overlay.css" />
+    <link rel="stylesheet" href="css/contacts-overlay-responsive.css" />
+
+    <link rel="stylesheet" href="./css/sidebar.css" />
+    <link rel="stylesheet" href="./css/header.css" />
+
+    <script src="js/board.js" defer></script>
+    <script src="js/board_help_functions.js" defer></script>
+    <script src="js/board_templates.js" defer></script>
+
+    <script src="js/script.js" defer></script>
+    <script src="js/add_task.js" defer></script>
+    <script src="js/add_task_templates.js" defer></script>
+    <script src="js/add_task_dropdown.js" defer></script>
+    <script src="js/add_task_contact.js"></script>
+    <script src="js/storage.js" defer></script>
+    <script src="js/header.js"></script>
+
+    <title>Board</title>
+    <link
+      rel="shortcut icon"
+      href="./img/favicon/join-favicon.png"
+      type="image/x-icon"
+    />
+  </head>
+  <body onload="initBoard(), initHead()">
+    <div w3-include-html="assets/templates/header.html"></div>
+
+    <div w3-include-html="assets/templates/sidebar.html"></div>
+    <section class="boardHeaderContainer">
+      <div class="boardHeader">
+        <div class="boardHeaderMobile">
+          <h1>Board</h1>
+          <button class="addTaskMobile" onclick="location.href ='task.html'">
+            <img src="img/board_add_task.svg" alt="" />
+          </button>
+        </div>
+
+        <div class="boardHeaderInteract">
+          <div class="inputWithImg">
+            <input id="findTask" type="text" placeholder="Find Task" />
+            <div class="findTaskImg" onclick="searchTask()"></div>
+          </div>
+          <button class="addTaskDesktop" onclick="addTaskOnBoard('toDoStatus')">
+            Add task
+            <img src="img/board_add_task.svg" alt="" />
+          </button>
+        </div>
+      </div>
+    </section>
+    <section class="boradContent" id="boradContent">
+      <div class="sectionDragArea">
+        <div class="headerDragArea">
+          <h2>To do</h2>
+          <img
+            onclick="addTaskOnBoard('toDoStatus')"
+            class="addTaskToSection addTaskDesktop"
+            src="img/board_plus_button.svg"
+            alt="Add Task to to do"
+          />
+          <img
+            class="addTaskMobile"
+            onclick="location.href ='task.html'"
+            src="img/board_plus_button.svg"
+            alt="Add Task to to do"
+          />
+        </div>
+        <div
+          id="toDo"
+          class="draArea"
+          ondrop="moveTo('toDoStatus')"
+          ondragover="allowDrop(event)"
+        ></div>
+      </div>
+
+      <div class="sectionDragArea">
+        <div class="headerDragArea">
+          <h2>In pogress</h2>
+          <img
+            onclick="addTaskOnBoard('inProgressStatus')"
+            class="addTaskToSection addTaskDesktop"
+            src="img/board_plus_button.svg"
+            alt="Add Task to in Progress"
+          />
+          <img
+            class="addTaskMobile"
+            onclick="location.href ='task.html'"
+            src="img/board_plus_button.svg"
+            alt="Add Task to in Progress"
+          />
+        </div>
+        <div
+          id="inProgress"
+          class="draArea"
+          ondrop="moveTo('inProgressStatus')"
+          ondragover="allowDrop(event)"
+        ></div>
+      </div>
+
+      <div class="sectionDragArea">
+        <div class="headerDragArea">
+          <h2>Await feedback</h2>
+          <img
+            onclick="addTaskOnBoard('awaitFeedbackStatus')"
+            class="addTaskToSection addTaskDesktop"
+            src="img/board_plus_button.svg"
+            alt="Add Task to Await Feedback"
+          />
+          <img
+            class="addTaskMobile"
+            onclick="location.href ='task.html'"
+            src="img/board_plus_button.svg"
+            alt="Add Task to Await Feedback"
+          />
+        </div>
+        <div
+          id="awaitFeedback"
+          class="draArea"
+          ondrop="moveTo('awaitFeedbackStatus')"
+          ondragover="allowDrop(event)"
+        ></div>
+      </div>
+
+      <div class="sectionDragArea">
+        <div class="headerDragArea">
+          <h2>Done</h2>
+        </div>
+        <div
+          id="done"
+          class="draArea"
+          ondrop="moveTo('doneStatus')"
+          ondragover="allowDrop(event)"
+        ></div>
+      </div>
+    </section>
+    <div id="new-contact-container"></div>
+
+    <div w3-include-html="assets/templates/mobile.html"></div>
+  </body>
+</html>
