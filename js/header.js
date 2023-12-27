@@ -3,15 +3,16 @@
  */
 users = [];
 
+
 /**
  * This function initializes and loads user contacts and Initials
  */
 async function initHead() {
     await loadUsers();
-    await includeHTML();
     userInitials();
     selectSidebar();
 }
+
 
 /**
  * This function loads all users
@@ -23,6 +24,7 @@ async function loadUsers() {
         console.error('Loading Users error: ', e);
     }
 }
+
 
 /**
 * generate and show logout button

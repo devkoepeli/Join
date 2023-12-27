@@ -13,7 +13,6 @@ let assignInput, assignDropdown;
  * initialize important functions after body loaded
  */
 async function init() {
-    await includeHTML();
     await loadData();
     initAssignOnclick();
     setMinDate();

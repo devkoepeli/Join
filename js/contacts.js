@@ -2,17 +2,14 @@
  * Setting all required varibles and arrays
  */
 let contactInitials;
-
 let newEmail = 0;
-
 users = [];
 let contacts = [];
 
 /**
  * This function initializes and loads user contacts asynchronously and renders them in alphabetical order
  */
-async function InitContacts() {
-    await init();
+async function initContacts() {
     await loadUsers();
     contactsAlphabetical(users);
     renderAlphabet();
@@ -28,7 +25,6 @@ async function loadUsers() {
         console.error('Loading Users error: ', e);
     }
 }
-
 
 /**
 * close the edit overlay mask
@@ -157,8 +153,6 @@ function openContatcMobile() {
     document.getElementById("backArrow").classList.add("d-flex");
 }
 
-
-
 /**
  * open the contact overlay as edit mode with the current contact details
  */
@@ -210,7 +204,6 @@ async function saveContact(i) {
     openContact(i);
     initHead();
 }
-
 
 /**
  * This function formats a given name by capitalizing the first letter 
@@ -326,8 +319,6 @@ async function openAndInitContact(userID) {
     openContact(position);
     await InitContacts();
 }
-
-
 
 /**
  * show success message after creation of new contact with promise for settimeout

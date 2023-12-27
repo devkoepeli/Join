@@ -8,7 +8,6 @@ users = [];
  * Downloading files vom backend server, and run first functions
  */
 async function initSummary() {
-  await includeHTML();
   await loadData();
   renderSummaryConten();
 }
