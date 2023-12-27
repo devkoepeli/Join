@@ -84,6 +84,10 @@
   display: none;
 }
 
+.legals-link {
+  word-break: break-word;
+}
+
 @media (min-width: 851px) and (max-width: 1078px) {
   .hyphen {
     display: inline-block;
