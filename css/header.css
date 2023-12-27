@@ -50,11 +50,6 @@ header {
   background-color: #e2e6ec;
 }
 
-#header-logout {
-  position: relative;
-  z-index: 99;
-}
-
 .logout-btn {
   display: flex;
   flex-direction: column;
@@ -82,8 +77,8 @@ header {
 }
 
 .popup-frame-logout {
-  z-index: 2;
-  position: fixed;
+  z-index: 99;
+  position: absolute;
   top: 0;
   bottom: 0;
   right: 0;
@@ -131,6 +126,10 @@ header {
 
   .header-help {
     display: none;
+  }
+
+  .popup-frame-logout {
+    position: fixed;
   }
 
   .rs-logout {
