@@ -134,6 +134,7 @@ button:hover {
   display: flex;
   flex-grow: 1;
   margin-left: 294px;
+  margin-bottom: 24px;
 }
 
 .sectionDragArea {

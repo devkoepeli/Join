@@ -90,8 +90,6 @@
     align-items: center;
     width: 90%;
     height: 85%;
-    position: absolute;
-    top: 10px;
   }
 
   .addContactLeftPart {
@@ -170,7 +168,6 @@
 
   .addContactContainer {
     overflow-y: auto;
-    position: fixed;
   }
 
   .addContactLeftPart {

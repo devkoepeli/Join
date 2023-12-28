@@ -1,14 +1,6 @@
 @media (max-width: 1399.98px) {
-  .boardHeaderContainer {
-    margin-left: 198px;
-  }
-
   .boardHeader {
     width: 856px;
-  }
-
-  .boradContent {
-    margin-left: 262px;
   }
 
   .headerDragArea {
