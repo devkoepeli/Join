@@ -10,7 +10,9 @@ let addTaskStatus;
  * all necessary data and HTML files are loaded to display them on the page
  */
 async function initBoard() {
+  loader('show');
   await loadData();
+  loader('remove');
   todos = tasks;
   originalTodos = todos.slice();
   await updateHTML();

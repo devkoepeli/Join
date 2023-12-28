@@ -223,9 +223,10 @@ function generateToDoAssigned(todo, id) {
  */
 function generateTodSubtask(todo, id) {
     let subtasks = todo["subtasks"];
+    let subtasksLength = Array.isArray(subtasks) ? subtasks.length : 0;
     let subtasksDiv = document.getElementById(`toDoOpenSubtasks${id}`);
     subtasksDiv.innerHTML = "";
-    for (let i = 0; i < subtasks.length; i++) {
+    for (let i = 0; i < subtasksLength; i++) {
         let task = subtasks[i];
         let description = task["taskDescription"];
         let isChecked = "";
@@ -258,7 +259,8 @@ async function updateSubtask(id, i) {
  */
 function renderSubtasks(subtasks) {
     let subtasksContainer = document.getElementById("subtasks-container");
-    for (let index = 0; index < subtasks.length; index++) {
+    let subtasksLength = Array.isArray(subtasks) ? subtasks.length : 0;
+    for (let index = 0; index < subtasksLength; index++) {
         let subtaskField = subtasks[index]["taskDescription"];
         subtasksContainer.innerHTML += editSubtaskHTML(subtaskField, subtaskIndex);
         subtaskIndex++;

@@ -289,21 +289,17 @@ function getPrioButton() {
 
 
 /**
- * returns either an array with all the selected users of assigned field or null
- * @returns - either an array or null
+ * returns an array with all the selected users
+ * @returns array
  */
 function getSelectedUsers() {
-    if (assignedUsers.length) {
-        return assignedUsers;
-    } else if (!assignedUsers.length) {
-        return null;
-    }
+    return assignedUsers;
 }
 
 
 /**
- * returns array containing objects with the subtasks if any subtasks exists otherwise null
- * @returns - either an array or null
+ * returns array containing objects with the subtasks if any subtasks exists
+ * @returns an array
  */
 function getSubtasks() {
     const subtaskInputList = document.querySelectorAll('.subtask-input');
@@ -316,21 +312,21 @@ function getSubtasks() {
           };
           subtasks.push(newSubtask);
     }
-    if (subtaskInputList.length) {
-        return subtasks;
-    } else if (!subtaskInputList.length) {
-        return null;
-    }
+    return subtasks;
 }
 
 
 /**
- * returns the priority description of selected button deleting '-btn'
- * @returns - string with name of selected button
+ * returns the priority description of selected button deleting '-btn' or null
+ * @returns string with name of selected button or null
  */
 function modifyPrioString () {
     let prio = getPrioButton();
-    let modifiedPrio = prio.slice(0, -4);
-    modifiedPrio = modifiedPrio.charAt(0).toUpperCase() + modifiedPrio.slice(1);
-    return modifiedPrio;
+    if (prio) {
+        let modifiedPrio = prio.slice(0, -4);
+        modifiedPrio = modifiedPrio.charAt(0).toUpperCase() + modifiedPrio.slice(1);
+        return modifiedPrio;
+    } else {
+        return prio;
+    }
 }
