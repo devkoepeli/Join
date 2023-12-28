@@ -110,19 +110,12 @@ async function moveTo(status) {
 function openToDo(id) {
   let todo = originalTodos[id];
   editPrio = originalTodos[id]["prio"];
-  editSubtasks =
-    originalTodos[id][
-      "subtasks"
-    ].slice();
-  let originalOverflow = document.body.style.overflow;
-  document.body.style.overflow = "hidden";
+  editSubtasks = originalTodos[id]['subtasks'];
+  document.body.classList.add('o-hidden');
   document.getElementById("boradContent").innerHTML += generateToDoOpenHTML(todo, id);
   setTimeout(() => {
     document.getElementById("toDoOpen").classList.add("showToDoOpen");
   }, 0);
-  setTimeout(() => {
-    document.body.style.overflow = originalOverflow;
-  }, 200);
   formatOpenToDo(todo, id);
 }
 
@@ -132,13 +125,11 @@ function openToDo(id) {
 function closeToDo() {
   assignedUsers = [];
   selectedUsers = [];
-  let originalOverflow = document.body.style.overflow;
-  document.body.style.overflow = "hidden";
   document.getElementById("toDoOpen").classList.remove("showToDoOpen");
   setTimeout(() => {
     document.getElementById("toDoOpenBg").remove();
+    document.body.classList.remove('o-hidden');
     updateHTML();
-    document.body.style.overflow = originalOverflow;
   }, 200);
 }
 
@@ -258,8 +249,7 @@ function showEdit(id) {
  * @param {string} statusTask - Status of the task that will be created
  */
 function addTaskOnBoard(statusTask) {
-  let originalOverflow = document.body.style.overflow;
-  document.body.style.overflow = "hidden";
+  document.body.classList.add('o-hidden');
   assignedUsers = [];
   selectedUsers = [];
   editSubtasks = [];
@@ -270,24 +260,19 @@ function addTaskOnBoard(statusTask) {
   setTimeout(() => {
     document.getElementById("addTaskOpen").classList.add("showToDoOpen");
   }, 0);
-  setTimeout(() => {
-    document.body.style.overflow = originalOverflow;
-  }, 200);
 }
 
 /**
  * closes the overlay to creat a new task
  */
-function closeAddTask() {
-  let originalOverflow = document.body.style.overflow;
-  document.body.style.overflow = "hidden";
+async function closeAddTask() {
   document.getElementById("addTaskOpen").classList.remove("showToDoOpen");
-  setTimeout(() => {
+  await new Promise(resolve => setTimeout(() => {
     document.getElementById("addTaskOpenBg").remove();
     updateHTML();
-    document.body.style.overflow = originalOverflow;
-  }, 200);
-
+    document.body.classList.remove('o-hidden');
+    resolve();
+  }, 200));
 }
 
 /**
@@ -296,6 +281,7 @@ function closeAddTask() {
  * @param {string} statusTask - Status of the task that will be created
  */
 async function addTaskBoard(statusTask) {
+  loader('show');
   let newTask = {
     id: originalTodos.length,
     status: statusTask,
@@ -310,10 +296,11 @@ async function addTaskBoard(statusTask) {
   originalTodos.push(newTask);
   tasks.push(newTask);
   await setItem('tasks', JSON.stringify(tasks));
+  loader('remove');
   document.getElementById("taskAddedContainer").classList.remove("d-none");
-  setTimeout(() => {
+  await new Promise(resolve => setTimeout(() => {
     document.getElementById("taskAddedContainer").classList.add("d-none");
     closeAddTask();
-  }, 700);
+    resolve();
+  }, 700));
 }
-

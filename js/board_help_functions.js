@@ -97,26 +97,10 @@ function generateDescription(element) {
  */
 function generateSubtask(element) {
     let subtasks = element["subtasks"];
-    let subtasksDiv = document.getElementById(`toDoSubtasks${element["id"]}`);
     let doneSubtasksDiv = document.getElementById(`toDoSubtasksDone${element["id"]}`);
     let progessbarFillerDiv = document.getElementById(`toDoSubtasksProgressFiller${element["id"]}`);
 
-    if (subtasks.length === 0) {
-        subtasksDiv.classList.add("d-none");
-    } else {
-        updateProgressBar(subtasks, doneSubtasksDiv, progessbarFillerDiv);
-        let trueCount = 0;
-        for (let i = 0; i < subtasks.length; i++) {
-            if (subtasks[i]["isDone"]) {
-                trueCount++;
-            }
-        }
-        let barWidth = 100;
-        doneSubtasksDiv.innerHTML = `${trueCount}`;
-        let fillWidth = barWidth * (trueCount / subtasks.length);
-        progessbarFillerDiv.style.width = `${fillWidth}px`;
-    }
-
+    updateProgressBar(subtasks, doneSubtasksDiv, progessbarFillerDiv);
 }
 
 /**
@@ -126,15 +110,16 @@ function generateSubtask(element) {
  * @param {html element} progessbarFillerDiv - div for the prograssbar of the subtask
  */
 function updateProgressBar(subtasks, doneSubtasksDiv, progessbarFillerDiv) {
+    let subtasksLength = Array.isArray(subtasks) ? subtasks.length : 0;
     let trueCount = 0;
-    for (let i = 0; i < subtasks.length; i++) {
+    for (let i = 0; i < subtasksLength; i++) {
         if (subtasks[i]["isDone"]) {
             trueCount++;
         }
     }
     let barWidth = document.querySelector('.toDoSubtasksProgress').offsetWidth;
     doneSubtasksDiv.innerHTML = `${trueCount}`;
-    let fillWidth = barWidth * (trueCount / subtasks.length);
+    let fillWidth = barWidth * (trueCount / subtasksLength);
     progessbarFillerDiv.style.width = `${fillWidth}px`;
 }
 

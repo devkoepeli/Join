@@ -5,6 +5,8 @@
  * @returns  string with the html
  */
 function generateTodoHTML(element) {
+    const subtasks = element["subtasks"];
+    const subtasksLength = Array.isArray(subtasks) ? subtasks.length : 0;
     return /*html*/ `
     <div draggable="true" ondragstart="startDragging(${element["id"]})"  onclick="openToDo(${element["id"]})" class="todo" id="todo${element["id"]}">
     <div class="toDoCategory" id="toDoCategory${element["id"]}" >  ${element["category"]}</div>
@@ -18,7 +20,7 @@ function generateTodoHTML(element) {
       <div class="toDoSubtasksProgress">
           <div id="toDoSubtasksProgressFiller${element["id"]}" class="toDoSubtasksProgressFiller"></div>
       </div> 
-      <div class="toDoSubtasksCount"> <div id="toDoSubtasksDone${element["id"]}"></div>/${element["subtasks"].length} Subtask</div> 
+      <div class="toDoSubtasksCount"> <div id="toDoSubtasksDone${element["id"]}"></div>/${subtasksLength} Subtask</div> 
   </div>
   
     <div class="toDoBottom">

@@ -605,7 +605,7 @@
     height: 70px;
     animation: spin 1s linear infinite;
     position: absolute;
-    z-index: 99;
+    z-index: 101;
     top: 0;
     bottom: 0;
     left: 0;
@@ -621,7 +621,7 @@
 
 .loader-overlay {
     position: absolute;
-    z-index: 99;
+    z-index: 101;
     top: 0;
     bottom: 0;
     left: 0;
