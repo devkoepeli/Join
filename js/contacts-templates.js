@@ -141,47 +141,45 @@ function generateEditOverlay(i) {
 function genertaeContactInfo(i) {
     let contact = contacts[i];
     return /*html*/`
-<div class="contactInfoContainer">
+        <div class="contactInfoContainer">
 
-  <div class="contactInfoTop">
-    <div
-      class="contactInitialsInfo"
-      style="background-color: ${contact.userColor};">
-      ${contact.initials}
-    </div>
-    <div class="contactTextInfo">
-      <span class="contactNameInfo"
-        >${contact.firstName} ${contact.lastName}</span
-      >
-      <div class="manageContact">
-      <div class="editContact" onclick="editContact(${i})">
-        <img class="editContactImg" src="./img/editToDo.svg" alt="Edit Contact">
-          Edit
+            <div class="contactInfoTop">
+                <div
+                class="contactInitialsInfo"
+                style="background-color: ${contact.userColor};">
+                ${contact.initials}
+                </div>
+                <div class="contactTextInfo">
+                <span class="contactNameInfo"
+                    >${contact.firstName} ${contact.lastName}</span
+                >
+                <div class="manageContact">
+                <div class="editContact" onclick="editContact(${i})">
+                    <img class="editContactImg" src="./img/editToDo.svg" alt="Edit Contact">
+                    Edit
+                    </div>
+                    <div class="deletContact" onclick="deletContact(${i})">
+                    <img class="deletContactImg" src="./img/deleteToDo.svg" alt="Delet Contact">
+                    Delete
+                    </div>
+                </div>
+                </div>
+            </div>
+
+            <div class="contactInfoHeadline">Contacts Informationen</div>
+
+            <div>
+                <div class="contactInfoBottom">
+                <div class="contactInfoSublHead">Email</div>
+                <div class="contactInfoMail">${contact.email}</div>
+                </div>
+                <div class="contactInfoBottom">
+                <div class="contactInfoSublHead">Phone</div>
+                <div>${contact.phone}</div>
+                </div>
+            </div>
+
         </div>
-        <div class="deletContact" onclick="deletContact(${i})">
-        <img class="deletContactImg" src="./img/deleteToDo.svg" alt="Delet Contact">
-          Delete
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="contactInfoHeadline">Contacts Informationen</div>
-
-  <div>
-    <div class="contactInfoBottom">
-      <div class="contactInfoSublHead">Email</div>
-      <div class="contactInfoMail">${contact.email}</div>
-    </div>
-    <div class="contactInfoBottom">
-      <div class="contactInfoSublHead">Phone</div>
-      <div>${contact.phone}</div>
-    </div>
-  </div>
-
-</div>
-<div id="edit"></div>
-
-  
-    `
+        <div id="edit"></div>
+    `;
 }
