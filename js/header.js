@@ -65,6 +65,12 @@ function doNotClose(event) {
 * clear active user status and send back to index.html - log in
 */
 async function logout() {
+    for (const user of users) {
+        if (user.isYou) {
+            user.isYou = false;
+            await setItem('users', JSON.stringify(users));
+        }
+    }
     window.open("index.html", "_self");
 }
 

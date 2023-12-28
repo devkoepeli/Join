@@ -101,4 +101,37 @@ let users = [
         isYou: false,
         userID: 8
     },
+    {
+        firstName: 'Dave',
+        lastName: 'Schmidt',
+        initials: 'DS',
+        userColor: '#FFC107',
+        email: 'davesch@gmail.com',
+        phone: '+49 1111 111 12 7',
+        password: null,
+        isYou: false,
+        userID: 9
+    },
+    {
+        firstName: 'Markus',
+        lastName: 'Hoffmann',
+        initials: 'MH',
+        userColor: '#673AB7',
+        email: 'markus.hoff@gmail.com',
+        phone: '+49 1111 111 12 3',
+        password: null,
+        isYou: false,
+        userID: 10
+    },
+    {
+        firstName: 'Lisa',
+        lastName: 'Mayer',
+        initials: 'LM',
+        userColor: '#4CAF50',
+        email: 'lisam@gmail.com',
+        phone: '+49 1111 111 12 6',
+        password: null,
+        isYou: false,
+        userID: 11
+    }
 ];
