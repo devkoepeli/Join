@@ -9,7 +9,7 @@ users = [];
  */
 async function initSummary() {
   await loadData();
-  renderSummaryConten();
+  renderSummaryContent();
 }
 
 /**
@@ -42,8 +42,8 @@ let currentTime = new Date().getHours();
 /**
  * This function calls three other functions in sequence: `loadCount`, `timedGreeting` and `greetUser`
  */
-function renderSummaryConten() {
-  loadeCount();
+function renderSummaryContent() {
+  loadCount();
   timedGreeting();
   greetUser();
 }
@@ -51,7 +51,7 @@ function renderSummaryConten() {
 /**
  * Insert all values for the html part
  */
-function loadeCount() {
+function loadCount() {
   countTodos(tasks);
   document.getElementById("todoCount").innerHTML = todoCounts.toDoStatus;
   document.getElementById("doneCount").innerHTML = todoCounts.doneStatus;
