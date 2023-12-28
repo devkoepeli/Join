@@ -496,7 +496,7 @@ body {
 .contact-success {
   position: absolute;
   height: 100vh;
-  z-index: 99;
+  z-index: 101;
   top: 0;
   bottom: 0;
   right: 0;
@@ -515,6 +515,11 @@ body {
   opacity: 0;
   transform: translateY(800%);
   transition: all 0.25s ease-in-out;
+}
+
+.translate-100 {
+  opacity: 1;
+  transform: translateY(-100%);
 }
 
 .translate-0 {

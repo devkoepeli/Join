@@ -404,15 +404,14 @@ function generateAddTaskHTML(statusTask) {
                 </form>
             </div>
             </div>
-<div class="taskAddedContainer d-none" id="taskAddedContainer"> 
-  <div class="taskAdded">
-    <span>Task added to board</span>
-    <img class="board-icon" src="img/board-icon.svg" alt="Board icon">
-  </div>
-</div>
+
+            <div class="success d-none" id="success-task">
+                <div class="success-container">
+                    <span class="success-message">Task added to board</span>
+                    <img class="board-icon" src="img/board-icon.svg" alt="Board icon" />
+                </div>
+            </div>
         </div>
-
-
 `;
 }
 

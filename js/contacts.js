@@ -1,5 +1,5 @@
 /**
- * Setting all required varibles and arrays
+ * Setting all required variables and arrays
  */
 let contactInitials;
 let newEmail = 0;
@@ -200,7 +200,7 @@ async function saveContact(i) {
     await setItem('users', JSON.stringify(users));
 
     document.getElementById("edit").innerHTML = "";
-    InitContacts();
+    initContacts();
     openContact(i);
     initHead();
 }
@@ -237,7 +237,7 @@ async function deletContact(i) {
     await setItem('users', JSON.stringify(users));
     document.getElementById("contactInfoContainer").innerHTML = "";
     closeMobileContactInfo();
-    InitContacts();
+    initContacts();
     initHead();
 }
 
@@ -305,7 +305,7 @@ async function updateContactPage(newUser) {
 
     await closeOverlay();
     await successContact();
-    await InitContacts();
+    await initContacts();
 
 }
 
@@ -317,7 +317,7 @@ async function updateContactPage(newUser) {
 async function openAndInitContact(userID) {
     let position = findUserPosition(userID);
     openContact(position);
-    await InitContacts();
+    await initContacts();
 }
 
 /**

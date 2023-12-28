@@ -299,9 +299,9 @@ async function addTaskBoard(statusTask) {
   tasks.push(newTask);
   await setItem('tasks', JSON.stringify(tasks));
   loader('remove');
-  document.getElementById("taskAddedContainer").classList.remove("d-none");
+  document.getElementById('success-task').classList.remove('d-none');
   await new Promise(resolve => setTimeout(() => {
-    document.getElementById("taskAddedContainer").classList.add("d-none");
+    document.getElementById('success-task').classList.add('d-none');
     closeAddTask();
     resolve();
   }, 700));
