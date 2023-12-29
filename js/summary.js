@@ -46,6 +46,7 @@ function renderSummaryContent() {
   loadCount();
   timedGreeting();
   greetUser();
+  showMobileGreet();
 }
 
 /**
@@ -142,22 +143,25 @@ function updateDeadlineText(UrgentTasksCount) {
 /**
  * shows a popup to greet the user in mobile view
  */
-document.addEventListener("DOMContentLoaded", function () {
+async function showMobileGreet() {
   let mobileGreetDiv = document.getElementById("mobileGreet");
-  let mainContent = document.getElementById("summaryContent");
   let isMobileView = window.matchMedia("(max-width: 767.98px)").matches;
   if (isMobileView) {
-    mainContent.style.display = "none";
-    mobileGreetDiv.classList.add("show");
-    setTimeout(function () {
-      mainContent.style.display = "flex";
+    mobileGreetDiv.style.display = 'flex';
+    await new Promise(resolve => setTimeout(function () {
+      mobileGreetDiv.classList.add("show");
+      resolve();
+    }, 100));
+    await new Promise(resolve => setTimeout(function () {
       mobileGreetDiv.classList.add("hidden");
-    }, 700);
-    setTimeout(function () {
+      resolve();
+    }, 1500));
+    await new Promise(resolve => setTimeout(function () {
       mobileGreetDiv.style.display = "none";
-    }, 1700);
+      resolve();
+    }, 750));
   }
-});
+}
 
 /**
  * Function to show user/quest-login-name 
