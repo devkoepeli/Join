@@ -44,7 +44,7 @@
                     <div id="register-policy-container">
                         <div class="register-policy">
                             <img class="checkbox-icon" src="img/login/unchecked.svg" alt="Checkbox" id="unchecked" onclick="toggleCheckIcon()">
-                            <span class="register-policy-text">I accept the <a href="../privacy_policy_out.html" class="register-policy-text text-blue">Privacy Policy</a></span>
+                            <span class="register-policy-text">I accept the <a href="../privacy_policy_out.html" target="_blank" class="register-policy-text text-blue">Privacy Policy</a></span>
                         </div>
                     </div>
                     <div class="register-button-container">
