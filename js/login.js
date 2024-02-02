@@ -394,3 +394,15 @@ function renderSection(section) {
         container.innerHTML = loginHTML();
     }
 }
+
+/**
+ * replace the intro note html elements after click on button with sign up card
+ */
+function closeIntro() {
+    const container = document.getElementById('container');
+    const signupDiv = document.getElementById('login-signup');
+    if (document.getElementById('intro-note')) {
+        container.innerHTML = loginHTML();
+        signupDiv.classList.remove('d-none');
+    }
+}

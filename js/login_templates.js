@@ -73,32 +73,32 @@ function loginHTML() {
                 <h1 class="login-heading">Log in</h1>
                 <form class="login-form" onsubmit="login(); return false">
                     <div class="login-inputs" id="login-inputs">
-                    <div class="login-input-container">
-                        <div class="login-input-wrapper">
-                        <input class="login-email-input" type="email" name="email-login" id="email-login" placeholder="Email"
-                            required autocomplete="on" />
-                        <img class="email-icon" src="img/login/mail.svg" alt="Email Icon" />
+                        <div class="login-input-container">
+                            <div class="login-input-wrapper">
+                            <input class="login-email-input" type="email" name="email-login" id="email-login" placeholder="Email"
+                                required autocomplete="on" />
+                            <img class="email-icon" src="img/login/mail.svg" alt="Email Icon" />
+                            </div>
                         </div>
-                    </div>
-                    <div class="login-input-container">
-                        <div class="login-input-wrapper" id="pw-wrapper">
-                        <input class="login-pw-input" type="password" name="password-login" id="password-login"
-                            placeholder="Password" required autocomplete="current-password"
-                            onclick="replaceLockIcon('login')" />
-                        <img class="lock-icon" id="lock-icon-login" src="img/login/lock.svg" alt="Password Icon" />
+                        <div class="login-input-container">
+                            <div class="login-input-wrapper" id="pw-wrapper">
+                                <input class="login-pw-input" type="password" name="password-login" id="password-login"
+                                    placeholder="Password" required autocomplete="current-password"
+                                    onclick="replaceLockIcon('login')" />
+                                <img class="lock-icon" id="lock-icon-login" src="img/login/lock.svg" alt="Password Icon" />
+                            </div>
                         </div>
-                    </div>
                     </div>
                     <div class="login-remember">
-                    <img class="checkbox-icon" src="img/login/unchecked.svg" alt="Checkbox" id="unchecked"
-                        onclick="toggleCheckIcon()" />
-                    <span class="login-remember-text">Remember Me</span>
+                        <img class="checkbox-icon" src="img/login/unchecked.svg" alt="Checkbox" id="unchecked"
+                            onclick="toggleCheckIcon()" />
+                        <span class="login-remember-text">Remember Me</span>
                     </div>
                     <div class="login-button-container">
-                    <button type="submit" class="main-button">Log in</button>
-                    <button type="button" class="main-button main-button-white" onclick="guestLogin()">
-                        Guest Log in
-                    </button>
+                        <button type="submit" class="main-button">Log in</button>
+                        <button type="button" class="main-button main-button-white" onclick="guestLogin()">
+                            Guest Log in
+                        </button>
                     </div>
                 </form>
             </div>

@@ -116,6 +116,23 @@
         animation-duration: 1s;
         animation-delay: 0.75s;
     }
+
+    .intro-note {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+}
+
+@media (max-width: 476px) {
+    .intro-note {
+        height: unset;
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+
+    .intro-description {
+        font-size: 0.9rem;
+    }
 }
 
 @media (max-width: 400px) {
