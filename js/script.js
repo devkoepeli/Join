@@ -4,14 +4,14 @@
 function selectSidebar() {
     let currentPage = window.location.pathname;
     let idMappings = {
-        '/Join/summary.html': ['id-0', 'idResponsive-0'],
-        '/Join/board.html': ['id-1', 'idResponsive-1'],
-        '/Join/task.html': ['id-2', 'idResponsive-2'],
-        '/Join/contacts.html': ['id-3', 'idResponsive-3'],
-        '/Join/legal_notice.html': ['id-4'],
-        '/Join/privacy_policy.html': ['id-5'],
-        '/Join/legal_notice_out.html': ['id-6'],
-        '/Join/privacy_policy_out.html': ['id-7']
+        '/summary.html': ['id-0', 'idResponsive-0'],
+        '/board.html': ['id-1', 'idResponsive-1'],
+        '/task.html': ['id-2', 'idResponsive-2'],
+        '/contacts.html': ['id-3', 'idResponsive-3'],
+        '/legal_notice.html': ['id-4'],
+        '/privacy_policy.html': ['id-5'],
+        '/legal_notice_out.html': ['id-6'],
+        '/privacy_policy_out.html': ['id-7']
     };
 
     let ids = idMappings[currentPage];

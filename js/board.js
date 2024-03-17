@@ -79,17 +79,34 @@ function startDragging(id) {
  * Makes it possbile to drop a drages Task in the disired Section
  * 
  * @param {object} ev - Event Object when Taks gets droped in a Section
+ * @param {string} eventTargetId - passes the id of the element being dragged over
  */
-function allowDrop(ev) {
+function allowDrop(ev, eventTargetId) {
   ev.preventDefault();
+  const eventTarget = document.getElementById(eventTargetId);
+  if (!eventTarget.classList.contains("isBeingDraggedOver")) {
+    eventTarget.classList.add("isBeingDraggedOver");
+  }
+}
+
+/**
+ * Removes the added css class for highlighting after dragend/dragleave events
+ * @param {string} eventTargetId - passes the id of the element being dragged over
+ */
+function removeHighlighting(eventTargetId) {
+  const eventTarget = document.getElementById(eventTargetId);
+  if (eventTarget.classList.contains("isBeingDraggedOver")) {
+    eventTarget.classList.remove("isBeingDraggedOver");
+  }
 }
 
 /**
  * Gives the selected Task the new status where it was placed via drag and drop
  * 
  * @param {string} status - Status of the selected Task
+ * @param {string} eventTargetId - passes the id of the element being dragged over
  */
-async function moveTo(status) {
+async function moveTo(status, eventTargetId) {
   let draggedTask = originalTodos.splice(currentDraggedElement, 1)[0];
   let draggedTaskOriginal = tasks.splice(currentDraggedElement, 1)[0];
   draggedTask.status = status;
@@ -102,6 +119,7 @@ async function moveTo(status) {
   }
   await setItem('tasks', JSON.stringify(tasks));
   updateHTML();
+  removeHighlighting(eventTargetId);
 }
 
 /**

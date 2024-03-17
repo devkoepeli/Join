@@ -138,7 +138,11 @@
         <img class="addTaskMobile" onclick="location.href ='task.html'" src="img/board_plus_button.svg"
           alt="Add Task to to do" />
       </div>
-      <div id="toDo" class="draArea" ondrop="moveTo('toDoStatus')" ondragover="allowDrop(event)"></div>
+      <div id="toDo" class="draArea"
+        ondrop="moveTo('toDoStatus', 'toDo')"
+        ondragover="allowDrop(event, 'toDo')"
+        ondragend="removeHighlighting('toDo')"
+        ondragleave="removeHighlighting('toDo')"></div>
     </div>
 
     <div class="sectionDragArea">
@@ -149,7 +153,11 @@
         <img class="addTaskMobile" onclick="location.href ='task.html'" src="img/board_plus_button.svg"
           alt="Add Task to in Progress" />
       </div>
-      <div id="inProgress" class="draArea" ondrop="moveTo('inProgressStatus')" ondragover="allowDrop(event)"></div>
+      <div id="inProgress" class="draArea"
+        ondrop="moveTo('inProgressStatus', 'inProgress')"
+        ondragover="allowDrop(event, 'inProgress')"
+        ondragend="removeHighlighting('inProgress')"
+        ondragleave="removeHighlighting('inProgress')"></div>
     </div>
 
     <div class="sectionDragArea">
@@ -160,7 +168,11 @@
         <img class="addTaskMobile" onclick="location.href ='task.html'" src="img/board_plus_button.svg"
           alt="Add Task to Await Feedback" />
       </div>
-      <div id="awaitFeedback" class="draArea" ondrop="moveTo('awaitFeedbackStatus')" ondragover="allowDrop(event)">
+      <div id="awaitFeedback" class="draArea" 
+        ondrop="moveTo('awaitFeedbackStatus', 'awaitFeedback')"
+        ondragover="allowDrop(event, 'awaitFeedback')"
+        ondragend="removeHighlighting('awaitFeedback')"
+        ondragleave="removeHighlighting('awaitFeedback')"></div>
       </div>
     </div>
 
@@ -168,7 +180,11 @@
       <div class="headerDragArea">
         <h2>Done</h2>
       </div>
-      <div id="done" class="draArea" ondrop="moveTo('doneStatus')" ondragover="allowDrop(event)"></div>
+      <div id="done" class="draArea"
+        ondrop="moveTo('doneStatus', 'done')"
+        ondragover="allowDrop(event, 'done')"
+        ondragend="removeHighlighting('done')"
+        ondragleave="removeHighlighting('done')"></div>
     </div>
   </section>
   <div id="new-contact-container"></div>

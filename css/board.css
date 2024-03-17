@@ -73,6 +73,7 @@ button:hover {
 .boardHeaderInteract button {
   background-color: #2a3647;
 }
+
 .boardHeaderInteract button:hover {
   background-color: #29abe2;
 }
@@ -89,9 +90,12 @@ button:hover {
   padding: 8px 16px;
   border: 1px solid #a8a8a8;
 
-  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
-  -moz-box-sizing: border-box; /* Firefox, other Gecko */
-  box-sizing: border-box; /* Opera/IE 8+ */
+  -webkit-box-sizing: border-box;
+  /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;
+  /* Firefox, other Gecko */
+  box-sizing: border-box;
+  /* Opera/IE 8+ */
 }
 
 .inputWithImg:hover {
@@ -149,6 +153,7 @@ button:hover {
   align-items: center;
   height: 24px;
   width: 244px;
+  padding-bottom: 24px;
 }
 
 .addTaskToSection {
@@ -158,17 +163,21 @@ button:hover {
 
 .addTaskToSection:hover {
   cursor: pointer;
-  filter: invert(56%) sepia(80%) saturate(2198%) hue-rotate(166deg)
-    brightness(102%) contrast(77%);
+  filter: invert(56%) sepia(80%) saturate(2198%) hue-rotate(166deg) brightness(102%) contrast(77%);
 }
 
 .draArea {
   /* height: 100%; */
+  /* flex: 1; */
   margin-left: -8px;
-  flex: 1;
-  overflow-y: auto;
+  border: 1.5px dotted transparent;
+  min-height: 250px;
+  border-radius: 16px;
+}
 
-  max-height: 670px;
+.isBeingDraggedOver {
+  border: 1.5px dotted black;
+  background: rgba(42, 54, 71, 0.075);
 }
 
 .todo {
@@ -214,6 +223,7 @@ button:hover {
   justify-content: space-between;
   width: 100%;
 }
+
 .toDoSubtasksProgress {
   height: 8px;
   width: 100px;
@@ -290,6 +300,7 @@ button:hover {
   border: 1px dashed #a8a8a8;
   margin-top: 16px;
   margin-left: 8px;
+  margin-right: 8px;
 }
 
 /* Open a ToDo */
@@ -321,16 +332,20 @@ button:hover {
   font-weight: 400;
   overflow-y: auto;
 
-  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
-  -moz-box-sizing: border-box; /* Firefox, other Gecko */
-  box-sizing: border-box; /* Opera/IE 8+ */
+  -webkit-box-sizing: border-box;
+  /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;
+  /* Firefox, other Gecko */
+  box-sizing: border-box;
+  /* Opera/IE 8+ */
 
   transition: transform 0.2s ease-in-out;
   transform: translateX(300%);
 }
 
 .showToDoOpen {
-  transform: translateX(0) !important; /*Move in from the right when opened*/
+  transform: translateX(0) !important;
+  /*Move in from the right when opened*/
 }
 
 .toDoOpenHeader {
@@ -389,6 +404,7 @@ button:hover {
 .toDoOpenPrioText {
   margin-right: 10px;
 }
+
 .boardPrioIconLow {
   width: 17px;
   fill: #7ae229;
@@ -488,8 +504,7 @@ button:hover {
 }
 
 .deleteToDo:hover .deleteToDoImg {
-  filter: invert(56%) sepia(80%) saturate(2198%) hue-rotate(166deg)
-    brightness(102%) contrast(77%);
+  filter: invert(56%) sepia(80%) saturate(2198%) hue-rotate(166deg) brightness(102%) contrast(77%);
 }
 
 .editToDo {
@@ -504,8 +519,7 @@ button:hover {
 }
 
 .editToDo:hover .editToDoImg {
-  filter: invert(56%) sepia(80%) saturate(2198%) hue-rotate(166deg)
-    brightness(102%) contrast(77%);
+  filter: invert(56%) sepia(80%) saturate(2198%) hue-rotate(166deg) brightness(102%) contrast(77%);
 }
 
 .todoFooterSeparator {
@@ -560,12 +574,14 @@ button:hover {
   display: none;
 }
 
-.customCheckbox input:checked + .customCheckmark .checkedSvg {
-  display: block; /* Display the checked SVG when the checkbox is checked */
+.customCheckbox input:checked+.customCheckmark .checkedSvg {
+  display: block;
+  /* Display the checked SVG when the checkbox is checked */
 }
 
-.customCheckbox input:not(:checked) + .customCheckmark .uncheckedSvg {
-  display: block; /* Display the unchecked SVG when the checkbox is not checked */
+.customCheckbox input:not(:checked)+.customCheckmark .uncheckedSvg {
+  display: block;
+  /* Display the unchecked SVG when the checkbox is not checked */
 }
 
 /* Edit Open Task */
@@ -638,9 +654,12 @@ button:hover {
   border-radius: 30px;
   padding: 48px 40px;
 
-  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
-  -moz-box-sizing: border-box; /* Firefox, other Gecko */
-  box-sizing: border-box; /* Opera/IE 8+ */
+  -webkit-box-sizing: border-box;
+  /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;
+  /* Firefox, other Gecko */
+  box-sizing: border-box;
+  /* Opera/IE 8+ */
 
   transition: transform 0.2s ease-in-out;
   transform: translateX(300%);
